@@ -14,10 +14,6 @@ struct ContentView: View {
     var body: some View {
         NavigationStack{
             ZStack{
-                Color.red
-                    .ignoresSafeArea([.all])
-                Color("KadaiBodyColor")
-                    .ignoresSafeArea(edges: [.horizontal, .bottom])
                 VStack{
                     HStack(spacing: 10) {
                         Text("都道府県")
@@ -33,7 +29,7 @@ struct ContentView: View {
                         .tint(.red)
                     }
                     .padding(40)
-                Spacer()
+                    Spacer()
                 }
                 .sheet(isPresented: $isSheetPresented){
                     SheetView(isSheetPresented: $isSheetPresented,
@@ -52,6 +48,8 @@ struct ContentView: View {
                         .padding(.bottom)
                     }
                 }
+                .toolbarBackground(Color.red, for: .navigationBar)
+                .toolbarBackground(.visible, for: .navigationBar)
             }
         }
     }

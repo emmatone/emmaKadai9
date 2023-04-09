@@ -19,15 +19,8 @@ struct SheetView: View {
     ]
 
     var body: some View {
-        ZStack{
-            Color.red
-                .ignoresSafeArea([.all])
+        NavigationStack{
             VStack(alignment: .leading){
-                Button("Cancel"){
-                    isSheetPresented = false
-                }
-                .tint(.white)
-                .padding(20)
                 List(prefectures, id:\.self) { prefecture in
                     Button("\(prefecture)"){
                         selectedPrefecture = prefecture
@@ -36,6 +29,16 @@ struct SheetView: View {
                     .padding(8)
                 }
             }
+            .toolbar{
+                ToolbarItem(placement: .cancellationAction){
+                    Button("Cancel"){
+                        isSheetPresented = false
+                    }
+                    .foregroundColor(.white)
+                }
+            }
+            .toolbarBackground(Color.red, for: .navigationBar)
+            .toolbarBackground(.visible, for: .navigationBar)
         }
     }
 }

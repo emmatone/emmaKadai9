@@ -14,3 +14,9 @@
   <li>@State, @Binding</li>
   <li>都道府県の選択肢をButtonで実装したので、Listの1行全体がボタンとなった。Listの1行の中に複数ボタンを設置する場合はTextに.onTabGestureモディファイアがよい模様</li>
 </ul>
+
+## FB
+<ol>
+<li>toolbarの背景色をZStackで設定せず、.toolbarBackground(_:,for:)にて設定すべき</li>
+<li>モダール表示の場合、遷移先で再度NavigationStackを記述</li>
+</ol<
